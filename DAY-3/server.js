@@ -2,16 +2,39 @@ const express=require("express");
 
 const app=express();
 
-app.get("/",function(req,res){
-    res.send("Hello World");
+// const notes=[//Array of objects
+//     {
+//         title:"Title 1",
+//         description:"Description 1"
+//     },
+//     {
+//         title:"Title 2",
+//         description:"Description 2"
+//     }
+// ]
+
+// app.get("/",function(req,res){
+//     res.send("Hello World");
+// });
+
+const notes=[];
+
+app.use(express.json());//Middleware
+
+
+app.post("/notes",(req,res)=>{
+    console.log(req.body);
+    notes.push(req.body);
+    res.send("note created");
 });
 
-app.listen(3000,()=>{// this callback executes whenever the server is started
+app.get("/notes",(req,res)=>{
+    res.send(notes);
+
+});
+
+app.listen(3000,()=>{
     console.log("Server is running on port 3000");
 
 });
 
-
-// API-> set of rules and protocols which helps to communicate between two software programmes
-// REST API-> HTTP/HTTPS & stateless & client-server communication 
-// HTTP methods-> GET,POST,PUT,PATCH DELETE 
