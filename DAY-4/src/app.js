@@ -61,3 +61,4 @@ module.exports=app;
 //204->successful DELETE request
 
 //cluster-> combination of storage + processor
+// 1 cluster-> multiple databases
