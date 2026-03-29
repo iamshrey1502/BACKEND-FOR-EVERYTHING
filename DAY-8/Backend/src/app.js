@@ -2,9 +2,11 @@
 
 const express=require("express");
 const noteModel=require("./models/note.model");
+const cors=require("cors");
 
 const app=express();
 
+app.use(cors());// CORS policy ko implement krne ke liye ye middleware use krna padta hai, jisse hum apne frontend se backend ko access kar sakte hai, bina iske hum apne frontend se backend ko access nahi kar paenge, kyunki CORS policy ke according, ek domain ke resources ko dusre domain ke resources se access karne ki permission nahi hoti hai, isliye hume CORS policy ko implement krna padta hai, jisse hum apne frontend se backend ko access kar sakte hai. 
 app.use(express.json());// json data ko read krne ke liye ye middleware use krna padta hai, jisse hum request body me json data bhej sakte hai.
 
 app.get("/",(req,res)=>{
@@ -45,7 +47,7 @@ app.delete("/api/notes/:id",async (req,res)=>{
 
 app.patch("/api/notes/:id",async (req,res)=>{
     const {description}=req.body;
-    await noteModel.findByIdAndUpdate(req.params.id,{description});
+    await noteModel.findByIdAndUpdate(req.params.id,{description});  
 
     res.status(200).json({
         message:"Note updated sucessfully"
