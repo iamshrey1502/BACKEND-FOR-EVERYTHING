@@ -28,7 +28,45 @@ html,body{
   padding: 1rem;
   width: 20rem;
   border-radius: 1rem;
-  ;
    
 }
+.delete{
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: red;
+  margin-top: 1rem;
+}
+.delete:active{
+  scale: 0.90;
+}
 
+.note-create-form{
+  padding:1rem;
+  display: flex;
+  gap: 1rem;
+  border: 0.2rem solid white;
+}
+.note-create-form button{
+  padding: 0.7rem;
+  border-radius: 0.2rem;
+  border: none;
+}
+.note-create-form button:active{
+  scale: 0.90;
+}
+.input{
+  display: block;
+  margin-top: 0.5rem;
+}
+.update{
+  display: block;
+  background-color: lightblue;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+.update:active{
+  scale: 0.90;
+}
