@@ -9,7 +9,7 @@ const app=express();
 
 app.use(cors());// CORS policy ko implement krne ke liye ye middleware use krna padta hai, jisse hum apne frontend se backend ko access kar sakte hai, bina iske hum apne frontend se backend ko access nahi kar paenge, kyunki CORS policy ke according, ek domain ke resources ko dusre domain ke resources se access karne ki permission nahi hoti hai, isliye hume CORS policy ko implement krna padta hai, jisse hum apne frontend se backend ko access kar sakte hai. 
 app.use(express.json());// json data ko read krne ke liye ye middleware use krna padta hai, jisse hum request body me json data bhej sakte hai.
-app.use(express.static("./public"));// static files ko serve krne ke liye ye middleware use krna padta hai, jisse hum apne frontend ke static files ko serve kar sakte hai, jaise ki html, css, js files, images etc.
+app.use(express.static("./public"));// static files ko serve krne ke liye ye middleware use krna padta hai, jisse hum apne frontend ke static files ko serve kar sakte hai, jaise ki html, css, js files, images etc. 
 
 // app.get("/",(req,res)=>{
 //     res.send("Hello World");

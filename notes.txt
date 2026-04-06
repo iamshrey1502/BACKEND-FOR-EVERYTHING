@@ -1,3 +1,21 @@
 npm run build -> is a command used to convert or wrap whole React application code you wrote in only 3 files-> HTML,CSS & JS.
 
 __dirname-> gives you the path till the folder containing current file.
+
+Do not deploy frontend and backend separately on different port, deploy frontend on the same port as that of backend.
+
+Move the html, css and js file inside dist folder of frontend to the public folder of backend.
+
+
+
+Authentication => Identify krna request kis user ke pass se aayi hai
+
+Authorization => User ky ky kr skta hai, kis cheezo ke liye authorize hai ek user
+
+Validation => Filled data ka format shi hai ya nhi
+
+Verification => Is data filled in the fields is correct or not
+
+Token is created by server but stays with user, and comes with every user request to server
+
+To check the token is created by server only, server signs(signature) that token with JWT_SECRET
